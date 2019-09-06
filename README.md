@@ -1,3 +1,16 @@
+# Star Wars character search table
+
+I have chosen to use react to the table to take advantage of it's various benefits around scalability, performance, and state management.
+
+Scalability
+React is incrementally adoptable some you can use it as little or as much as you wish to across your project.
+
+Performance
+React rendering engine (the virtual DOM) provides an optimal way of serving update to your client side app, using a diff compare to update only the part of your view that are totally necessary.
+
+State
+React component state provides a easy way to manage the data flow to your components (via React Hooks or React.Component class), making it straight forward to update derive a state the of a component as it changes.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
