@@ -54,6 +54,7 @@ function App() {
   let [pagerState, updatePagerState] = useState({prev: null, next: null, totalPages: 1});
   let [page, updatePage] = useState(1);
   let [isLoading, setIsLoading] = useState(true);
+  let [query, updateQuery] = useState("");
   let timeout = 0;
 
   const updateTable = res => {
@@ -84,7 +85,9 @@ function App() {
       updatePage(--page);
     }
 
-    pageCharacters({page: page})
+    console.log({query});
+
+    pageCharacters({page: page, query})
       .then(updateTable);
   }
 
@@ -95,6 +98,7 @@ function App() {
       if (event.target) {
         searchCharacters({q: event.target.value})
         .then(res => {
+          updateQuery(event.target.value);
           updatePage(1);
           updateTable(res);
         });

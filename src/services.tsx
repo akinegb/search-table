@@ -1,13 +1,14 @@
 const errorHandling = (error: any) => console.error('Opps something went wrong...', error);
 
+
 export const getStarWarsCharacters = () => {
   return fetch("https://swapi.co/api/people/")
     .then(res => res.json())
     .catch(errorHandling);
 }
 
-export const pageCharacters = ({page}: any) => {
-  return fetch(`https://swapi.co/api/people/?page=${page}`)
+export const pageCharacters = ({page, query}: any) => {
+  return fetch(`https://swapi.co/api/people/?page=${page}${query !== undefined?"&search="+query:""}`)
     .then(res => res.json())
     .catch(errorHandling);
 }
